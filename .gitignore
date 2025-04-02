@@ -1,3 +1,9 @@
+backend/models/*
+!backend/models/.gitkeep
+backend/llm-env/
+frontend/confluence.index/
+frontend/confluence_pages.csv
+frontend/ui-env/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

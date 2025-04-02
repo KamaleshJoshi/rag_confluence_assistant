@@ -1,0 +1,12 @@
+atlassian-python-api
+beautifulsoup4
+pandas
+sentence-transformers
+faiss-cpu
+langchain
+langchain-community
+langchain-huggingface
+streamlit
+huggingface_hub
+python-dotenv
+requests
