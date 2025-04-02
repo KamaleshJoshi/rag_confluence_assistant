@@ -21,9 +21,6 @@ llm-env\Scripts\activate
 pip install -r requirements-llm.txt
 ```
 
-- Sets up the backend to serve a local language model via Flask.
-- Uses `llama-cpp-python` to run Mistral or TinyLlama locally.
-
 #### Terminal 2 — Start the UI
 
 ```bash
@@ -33,28 +30,21 @@ ui-env\Scripts\activate
 pip install -r requirements-ui.txt
 ```
 
-- Prepares your Streamlit frontend and tools to embed/search documentation locally.
-
 ---
 
 ### Step 2: One-Time Setup
 
 #### Configure `.env` File
 
-In the `frontend/` folder, create a file named `.env` with the following content:
+Create a `.env` file in the `frontend/` folder with the following content:
 
 ```
-# Confluence API Credentials
 CONFLUENCE_EMAIL=your_email@example.com
 CONFLUENCE_API_TOKEN=your_confluence_api_token_here
 CONFLUENCE_DOMAIN=https://yourdomain.atlassian.net
 CONFLUENCE_SPACE_KEY=your_space_key
-
+HF_TOKEN=your_huggingface_token_here
 ```
-
-Make sure not to share this file publicly as it contains sensitive credentials.
-
----
 
 #### Download the LLM model
 
@@ -64,8 +54,6 @@ In Terminal 1, run:
 python download_model.py
 ```
 
-- Downloads a quantized `.gguf` model (TinyLlama or Mistral) for CPU inference.
-
 #### Extract Confluence Content
 
 In Terminal 2, run:
@@ -74,8 +62,13 @@ In Terminal 2, run:
 python extract_confluence.py
 ```
 
-- Uses your Atlassian API token to fetch Confluence pages.
-- Cleans them into plain text and saves them in `confluence_pages.csv`.
+#### Generate Embeddings
+
+In Terminal 2, after extracting content, run:
+
+```bash
+python generate_embeddings.py
+```
 
 ---
 
@@ -87,22 +80,15 @@ python extract_confluence.py
 python serve_llama_cpp.py
 ```
 
-- Serves the model through a local Flask API.
-
 #### Terminal 2 — Run the Streamlit UI
 
 ```bash
 streamlit run app.py
 ```
 
-- Launches a browser where you can ask questions.
-- Answers are generated using retrieved context and the local LLM.
-
 ---
 
 ## How It Works
-
-This is a RAG pipeline with the following steps:
 
 1. Pull Confluence data using API (`extract_confluence.py`)
 2. Generate embeddings with HuggingFace (`generate_embeddings.py`)
