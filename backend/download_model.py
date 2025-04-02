@@ -12,7 +12,7 @@ snapshot_download(
     local_dir=mistral_models_path
 )
 
-print(f"✅ Mistral GGUF model downloaded at: {mistral_models_path}")
+print(f"Mistral GGUF model downloaded at: {mistral_models_path}")
 
 # from huggingface_hub import snapshot_download
 # from pathlib import Path

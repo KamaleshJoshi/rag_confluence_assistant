@@ -1,16 +1,16 @@
-# 🧠 AI-Powered Confluence Search Assistant (Local RAG Pipeline)
+# AI-Powered Confluence Search Assistant (Local RAG Pipeline)
 
-This is a prototype project to demonstrate how to build a **local AI-based search assistant** for Confluence pages using a Retrieval-Augmented Generation (RAG) approach. It uses `llama-cpp-python` to run a quantized LLM locally, semantic search via FAISS, and a Streamlit UI to ask questions in plain English.
-
----
-
-## ✅ Steps to Run the AI-Powered Confluence Assistant
-
-This project uses **LLM + semantic search** to enable natural language search over Confluence pages — fully locally, without internet or cloud services.
+This is a prototype project to demonstrate how to build a local AI-based search assistant for Confluence pages using a Retrieval-Augmented Generation (RAG) approach. It uses `llama-cpp-python` to run a quantized LLM locally, semantic search via FAISS, and a Streamlit UI to ask questions in plain English.
 
 ---
 
-### 🧰 Step 1: Setup Environment and Dependencies
+## Steps to Run the AI-Powered Confluence Assistant
+
+This project uses LLM + semantic search to enable natural language search over Confluence pages — fully locally, without internet or cloud services.
+
+---
+
+### Step 1: Setup Environment and Dependencies
 
 #### Terminal 1 — Start the LLM Backend
 
@@ -37,11 +37,11 @@ pip install -r requirements-ui.txt
 
 ---
 
-### 📦 Step 2: One-Time Setup
+### Step 2: One-Time Setup
 
-#### 🧠 Download the LLM model
+#### Download the LLM model
 
-In **Terminal 1**, run:
+In Terminal 1, run:
 
 ```bash
 python download_model.py
@@ -49,9 +49,9 @@ python download_model.py
 
 - Downloads a quantized `.gguf` model (TinyLlama or Mistral) for CPU inference.
 
-#### 📥 Extract Confluence Content
+#### Extract Confluence Content
 
-In **Terminal 2**, run:
+In Terminal 2, run:
 
 ```bash
 python extract_confluence.py
@@ -62,7 +62,7 @@ python extract_confluence.py
 
 ---
 
-### 🚀 Step 3: Launch the Full Stack
+### Step 3: Launch the Full Stack
 
 #### Terminal 1 — Start the LLM backend
 
@@ -83,9 +83,9 @@ streamlit run app.py
 
 ---
 
-## 🔍 How It Works
+## How It Works
 
-This is a **RAG pipeline** with the following steps:
+This is a RAG pipeline with the following steps:
 
 1. Pull Confluence data using API (`extract_confluence.py`)
 2. Generate embeddings with HuggingFace (`generate_embeddings.py`)
@@ -94,6 +94,4 @@ This is a **RAG pipeline** with the following steps:
 
 ---
 
-📂 **GitHub Repo**: https://github.com/KamaleshJoshi/rag_confluence_assistant
-
-🧠 Built to explore RAG, LLMs, semantic search, and local-first AI applications.
+Built to explore RAG, LLMs, semantic search, and local-first AI applications.

@@ -26,12 +26,12 @@ Answer: [/INST]"""
         response = requests.post("http://localhost:8000/generate", json={"prompt": prompt, "max_tokens": 512})
         return response.json()["text"]
     except Exception as e:
-        return f"❌ Error: {e}"
+        return f"Error: {e}"
 
-st.title("🔍 Confluence AI Search")
+st.title("Confluence AI Search")
 query = st.text_input("Ask a question")
 
 if st.button("Search") and query:
-    st.write("🔎 Searching...")
+    st.write("Searching...")
     answer = get_answer(query)
     st.markdown(f"### Answer:\n{answer}")

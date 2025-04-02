@@ -44,4 +44,4 @@ for page in pages:
 
 df = pd.DataFrame(data)
 df.to_csv("confluence_pages.csv", index=False)
-print("✅ Extracted pages saved to confluence_pages.csv")
+print("Extracted pages saved to confluence_pages.csv")

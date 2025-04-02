@@ -9,4 +9,4 @@ embedding = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
 db = FAISS.from_texts(texts, embedding)
 db.save_local("confluence.index")
 
-print("✅ Embeddings saved to confluence.index/")
+print("Embeddings saved to confluence.index/")
