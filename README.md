@@ -39,6 +39,23 @@ pip install -r requirements-ui.txt
 
 ### Step 2: One-Time Setup
 
+#### Configure `.env` File
+
+In the `frontend/` folder, create a file named `.env` with the following content:
+
+```
+# Confluence API Credentials
+CONFLUENCE_EMAIL=your_email@example.com
+CONFLUENCE_API_TOKEN=your_confluence_api_token_here
+CONFLUENCE_DOMAIN=https://yourdomain.atlassian.net
+CONFLUENCE_SPACE_KEY=your_space_key
+
+```
+
+Make sure not to share this file publicly as it contains sensitive credentials.
+
+---
+
 #### Download the LLM model
 
 In Terminal 1, run:
